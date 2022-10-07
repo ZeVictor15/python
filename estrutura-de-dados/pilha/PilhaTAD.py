@@ -47,4 +47,12 @@ class Pilha:
             self.topo = self.topo.anterior
             return removido
     
+    def compara_pilha(pilha):
+        pass
     
+stack = Pilha()
+stack.insere(5)
+stack.insere(23)
+stack.insere(32)
+print(stack.tamanho)
+print(stack)
