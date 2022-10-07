@@ -59,18 +59,5 @@ class Pilha:
                 flag = False
                 break
 
-stack1 = Pilha()
-stack2 = Pilha()
-stack1.insere(5)
-stack1.insere(23)
-stack1.insere(32)
-
-stack2.insere(5)
-stack2.insere(23)
-stack2.insere(32)
-
-compara = Pilha()
-
-compara.compara_pilha(stack1,stack2)
 
 
