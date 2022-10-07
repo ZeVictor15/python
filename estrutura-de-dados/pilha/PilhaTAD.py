@@ -42,31 +42,23 @@ class Pilha:
             self._tamanho-=1
             removido=self.topo.dado
             self.topo = self.topo.anterior
+            
             return removido
     
     def compara_pilha(self,pilha):
-        flag = True
         
         if len(self) != len(pilha):
-            return flag == False
-        
-        elif self.topo.dado != pilha.topo.dado:
-            return flag == False
-        
-        return flag  
-
-
-stack1 = Pilha()
-stack1.insere(5)
-stack1.insere(23)
-stack1.insere(32)
-
-stack2 = Pilha()
-stack2.insere(5)
-stack2.insere(23)
-stack2.insere(32)
-
-print(stack1.topo.dado)
-print(stack2.topo.dado)
-
-print(stack1.compara_pilha(stack2))
+            return False
+        else:
+            no_atual1 = self.topo
+            no_atual2 = pilha.topo
+            
+            while (no_atual1 != None):
+                
+                if(no_atual1.dado != no_atual2.dado):
+                    return False
+                
+                no_atual1 = no_atual1.anterior
+                no_atual2 = no_atual2.anterior
+            
+            return True
