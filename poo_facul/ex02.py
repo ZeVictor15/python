@@ -3,14 +3,17 @@ class Curso:
         self.codigo = codigo
         self.nome = nome
         self.descricao = descricao
-        self.coordenador = Professor
-        self.docentes = Professor
+        self._coordenador = None
+        self._docentes = []
     
-    def definir_coordenador(self,cordenador):
-        self.coordenador = Professor
+    @property
+    def coordenador(self):
+        return self._coordenador    
+
+    @coordenador.setter
+    def coordenador(self,professor):
+        self._coordenador = professor
     
-    def add_docente(self,professor):
-        self.professor = Professor
         
 class Aluno:
     def __init__(self,matricula,nome,cpf,email,cursos):
@@ -21,7 +24,7 @@ class Aluno:
         self.cursos = Curso 
     
     def matricular(self,cursos):
-        self.cursos = Curso 
+        self.cursos = cursos 
         
     def imprimir(self):
         print(f"Aluno matriculado no curso {self.cursos}")
