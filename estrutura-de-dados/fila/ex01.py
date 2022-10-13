@@ -22,6 +22,6 @@ for i in range(5):
     valor = input('Digite um valor para adicionar na lista: ')
     fila.insere(valor)
 
-print(f'Essa são os valores da lista:\n {fila}\n a lista invertida é:\n {inverteFila(fila)}')
+print(f'Esse são os valores da lista e os valores invertidos:\n {fila}\n {inverteFila(fila)}')
 
 
