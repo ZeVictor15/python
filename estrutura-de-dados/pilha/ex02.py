@@ -17,4 +17,4 @@ def padraoXY(string):
         
         return True
 
-padraoXY('victor')
+print(padraoXY('victor'))

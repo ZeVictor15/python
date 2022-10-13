@@ -13,7 +13,7 @@ if frase[len(frase)-1] == '.':
             pilha.insere(letra)
         string = ''
         while not pilha.vazia():
-            string += pilha .remove()
+            string += pilha.remove()
         print(string, end= ' ')
 else:
     print("A frase não termina com '.' ")
