@@ -1,0 +1,5 @@
+{
+    "python.analysis.extraPaths": [
+        "./estrutura-de-dados/pilha"
+    ]
+}
