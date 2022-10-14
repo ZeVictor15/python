@@ -64,3 +64,4 @@ class Pessoa():
     def gerar_id():
         rand = randint(10000,19999)
         return rand
+    
