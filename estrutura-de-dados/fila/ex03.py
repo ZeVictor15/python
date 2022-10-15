@@ -49,23 +49,3 @@ def parFilas(fila):
         cabeca = cabeca.proximo
         
     return flag
-
-
-
-
-f1 = Fila()
-f2 = Fila()
-
-f1.insere(2)
-f1.insere(3)
-f1.insere(2)
-f1.insere(3)
-f1.insere(3)
-
-
-f2.insere(2)
-f2.insere(2)
-
-
-print(imparImutavel(f1))
-print(parFilas(f1))
