@@ -1,20 +1,24 @@
 from random import randint
 class Obra:
-    def __init__(self,dataAqui,titulo,tecnica,artista):
+    def __init__(self,dataAqui,titulo,tecnica,valor):
         self.dataAqui = dataAqui
         self.titulo = titulo
         self.tecnica = tecnica
-        self.autor = artista
+        self.valor = valor
+        self.autor = None
         self.codigo = __class__.geraCodigo()
         
     def __str__(self):
-        return f'{self.codigo}'
+        return f'O código da obra é: {self.codigo}\nO titulo é: {self.titulo}\nO nome do autor é: {self.autor.nome}\nA tecnica usada foi: {self.tecnica} '
     
-    def avaliar(self):
-        pass
+    def inserirAutor(self,artista):
+        self.autor = artista
+    
+    def avaliar(self,tecnica,inovação):
+        self.valor = (tecnica * 50) + (inovação)
     
     def imprimirObra(self):
-        print(self.codigo)
+        return f'O código é: {self.codigo}\nO titulo é {self.titulo} \nO valor é: {self.valor}'
     
     @staticmethod
     def geraCodigo():
@@ -22,17 +26,19 @@ class Obra:
         return codigo
         
 class Pintura(Obra) :
-    def __init__(self, dataAqui, titulo, tecnica, artista,tipoTinta):
-        super().__init__(dataAqui, titulo, tecnica, artista)
+    def __init__(self, dataAqui, titulo, tecnica, valor,tipoTinta):
+        super().__init__(dataAqui, titulo, tecnica, valor)
         self.tipoTinta = tipoTinta
     
     def __str__(self):
-        return super().__str__()
+        return f'O código da pintura é: {self.codigo}\nO titulo é: {self.titulo}\nO nome do autor é: {self.autor.nome} \nA técnica usada foi: {self.tecnica} \nO tipo de tinta é: {self.tipoTinta}'
     
 class Escultura(Obra):
-    def __init__(self, dataAqui, titulo, tecnica, artista,tipoMat):
-        super().__init__(dataAqui, titulo, tecnica, artista)
-        self.tipoMat = tipoMat 
+    def __init__(self, dataAqui, titulo, tecnica, valor,tipoMate):
+        super().__init__(dataAqui, titulo, tecnica, valor)
+        self.tipoMate = tipoMate
         
-    
-o1= Obra(2,'victor','lapis','oden')
+    def __str__(self):
+        return f'O código da Escultura é: {self.codigo}\nO titulo é: {self.titulo} \nO nome do autor é: {self.autor.nome} \nA técnica usada foi: {self.tecnica}\nO tipo de material é: {self.tipoMate}'
+
+
