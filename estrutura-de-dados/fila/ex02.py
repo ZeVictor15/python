@@ -20,14 +20,13 @@ def filaCres(fila1,fila2):
 f1 = Fila()
 f2 = Fila()
     
-for i in range(2):
-    valorF1 = input('Digite um valor para a fila 1: ')
-    f1.insere(valorF1)
+for i in range(3):
+    f1.insere(input('Digite um valor para a fila 1: '))
 
     
-for i in range(2):
-    valorF2 = input('Digite um valor para a fila 2: ')
-    f2.insere(valorF2)
+for i in range(3):
+    f2.insere(input('Digite um valor para a fila 2: '))
+       
     
 print(f1)   
 print(f2) 
