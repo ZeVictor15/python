@@ -14,8 +14,9 @@ class Obra:
     def inserirAutor(self,artista):
         self.autor = artista
     
-    def avaliar(self,tecnica,inovação):
-        self.valor = (tecnica * 50) + (inovação)
+    def avaliar(self):
+        self.valor = ((self.tecnica * 50) + (self.inovação * 80)) * 10
+        print(self.valor)
     
     def imprimirObra(self):
         return f'O código é: {self.codigo}\nO titulo é {self.titulo} \nO valor é: {self.valor}'
