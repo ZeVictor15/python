@@ -13,7 +13,3 @@ class Artistas():
       codigo = str(randint(1000,9999))
       return codigo
    
-l = []
-for i in l:
-   if len(l) == 0:
-      print('dfasf')
