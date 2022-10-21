@@ -7,6 +7,7 @@ print(show1)
 print('Valor a pagar por 2 ingressos pista: R$ ',show1.venderIngresso(2)) # dois ingressos pista
 print('Valor a pagar por 1 ingressos VIP: R$ ',show1.venderIngresso(1,1)) # um ingresso VIP
 
+
 print('Valor a pagar por 2 ingressos VIP: R$ ',show1.venderIngresso(2,1)) # dois ingressos VIP
 print('Valor a pagar por 2 ingressos VIP: R$ ',show1.venderIngresso(2,1)) # dois ingressos VIP
 
