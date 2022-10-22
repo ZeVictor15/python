@@ -35,8 +35,8 @@ class Show():
                     self.camarote[i-1].status = 'Vendido'
                     self.vendidos.append(self.camarote.pop(i-1))
             return valorTotal  
-            
-         for i in range(quantidade):
+         else:   
+            for i in range(quantidade):
                  if len(self.ingressos) == 0:
                     print('Ingressos Esgostado')
                     break
