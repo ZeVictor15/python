@@ -46,3 +46,7 @@ class Fila:
         self._tamanho -= 1
 
         return removido
+
+fila = Fila()
+fila.insere(5)
+print(fila)
