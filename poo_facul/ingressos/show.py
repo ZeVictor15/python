@@ -35,8 +35,8 @@ class Show():
                     self.camarote[i-1].status = 'Vendido'
                     self.vendidos.append(self.camarote.pop(i-1))
             return valorTotal  
-            
-         for i in range(quantidade):
+         else:   
+            for i in range(quantidade):
                  if len(self.ingressos) == 0:
                     print('Ingressos Esgostado')
                     break
@@ -44,14 +44,19 @@ class Show():
                      valorTotal += self.ingressos[i-1].valor
                      self.ingressos[i-1].status = 'Vendido'
                      self.vendidos.append(self.ingressos.pop(i-1))
-         return valorTotal  
+            return valorTotal  
     
     def relatorioVendas(self):
         valorTotal = 0
+        print('-'*100)
         for i in self.vendidos:
                 valorTotal += int(i.valor)
                 print(i)
         
         print(f'O valor total das vendas foi: {valorTotal}')
+        print('-'*100)
+        
+        
+        
     
 
