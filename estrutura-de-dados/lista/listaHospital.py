@@ -1,5 +1,5 @@
 class Nodo:
-    def __init__(self, dado = 0, proximo_nodo = None, cor = None):
+    def __init__(self, dado = 0, cor = None, proximo_nodo = None,):
         self.dado = dado
         self.proximo = proximo_nodo
         self.cor = cor
@@ -9,9 +9,9 @@ class Nodo:
 
 class Lista:
     def __init__(self):
-        self.cabeca = None
-        self.cauda = None
-        self.tamanho=0
+        self.cabeca  = None
+        self.cauda   = None
+        self.tamanho = 0
     
     def __repr__(self):
         return "[" + str(self.cabeca) + "]"
@@ -26,10 +26,7 @@ class Lista:
             return False
 
     def insereFim(self, novo_dado,cor):
-        
         novo_nodo = Nodo(novo_dado)
-        novo_nodo.cor = cor
-        
         if self.vazia():
             self.cabeca = novo_nodo
             self.cauda  = novo_nodo
@@ -39,43 +36,42 @@ class Lista:
         
         self.tamanho+=1
 
-    def insereInicio(self, novo_dado,cor):
+    def insere(self, novo_dado,cor):
         novo_nodo = Nodo(novo_dado)
-        novo_nodo.cor = cor
         if self.vazia():
             self.cabeca = novo_nodo
             self.cauda  = novo_nodo
         else:
-            novo_nodo.proximo = self.cabeca
-            self.cabeca = novo_nodo
+            if novo_nodo == 'v':
+                self.insereFim(novo_nodo)
+            else:
+                self.inserir_prioridade(novo_dado)
 
         self.tamanho+=1
         
-    def inserir_prioridade(self, novo_dado,cor):
-        novo_nodo = Nodo(novo_dado,cor)
-        novo_nodo.cor = cor
-        if cor == 'v':
-            if self.vazia():
-                self.cabeca = novo_nodo
-                self.cauda  = novo_nodo
-        else:
-            ant = novo_nodo
-            aux = ant.proximo
-            while aux != None and aux == 'a':
-                ant = aux
-                aux = ant.proximo
+    def inserir_prioridade(self, novo_dado):
+        if self.vazia():
+                self.cabeca = novo_dado
+                self.cauda  = novo_dado
+        else: 
+            if self.cabeca.cor == 'v':
+                novo_dado.proximo = self.cabeca
+                self.cabeca = novo_dado
+            else:
+                nodo_atual = self.cabeca
+                while nodo_atual.cor != "v":
+                    nodo_anterior = nodo_atual
+                    nodo_atual = nodo_atual.proximo
+                    
+                novo_dado.proximo = nodo_atual
+                nodo_anterior = novo_dado
+               
             
-            
-            ant.proximo = novo_nodo
-            novo_nodo.proximo = aux
-            
-                
-            
-         
-
 lista = Lista()
-lista.inserir_prioridade(13,'v')
-lista.inserir_prioridade(5,'a')
-lista.inserir_prioridade(4,'v')
-lista.inserir_prioridade(6,'v')
+lista.insere(10,'v')
+lista.insere(11,'v')
+lista.insere(5,'a')
+lista.insere(12,'v')
+lista.insere(6,'a')
+
 print(lista)
