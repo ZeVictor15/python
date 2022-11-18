@@ -1,5 +1,5 @@
 class Nodo:
-    def __init__(self, dado = None, cor = None, proximo_dado=None):
+    def __init__(self, dado = 0, cor = None, proximo_dado=None):
         self.dado = dado
         self.proximo = proximo_dado
         self.cor = cor
